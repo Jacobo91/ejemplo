@@ -1,0 +1,9 @@
+.nueva-feature {
+    cursor: pointer;
+    display: none;
+}
+
+
+[data-nueva-feature='true'] .nueva-feature {
+    display: block;
+}
