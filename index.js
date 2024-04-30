@@ -1,11 +1,14 @@
 
+
+const dataAttribute = 'data-carousel-case-color';
+
 function setupMutationObserver() {
     const targetNode = document.body;
 
     const callback = function(mutationsList, observer) {
         for(const mutation of mutationsList) {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'data-carousel-case-color') {
-                const caseColorValue = targetNode.getAttribute('data-carousel-case-color');
+            if (mutation.type === 'attributes' && mutation.attributeName === dataAttribute) {
+                const caseColorValue = targetNode.getAttribute(dataAttribute);
                 if (caseColorValue === 'true') {
                     alert('yes yes');
                 } else if (caseColorValue === 'false') {
@@ -17,7 +20,7 @@ function setupMutationObserver() {
 
     const observer = new MutationObserver(callback);
 
-    const config = { attributes: true, attributeFilter: ['data-carousel-case-color'] };
+    const config = { attributes: true, attributeFilter: [dataAttribute] };
 
     observer.observe(targetNode, config);
 
@@ -27,5 +30,6 @@ function setupMutationObserver() {
 
 // Call the setup function to start the observer
 setupMutationObserver();
+
 
 
