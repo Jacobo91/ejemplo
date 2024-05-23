@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('ig:ready', () => {
  const experiments = window.igData?.user.getExperiments();
  if (experiments.length) {
-    document.body.setAttribute('data-btw’-image-modal, 'true');
+    document.body.setAttribute('data-btw-image-modal', 'true');
   };
 })
